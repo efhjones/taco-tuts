@@ -7,7 +7,7 @@ import { IAppState, rootReducer, enhancers } from '../store/index';
   selector: 'login',
   providers: [ ],
   template: `
-  <h3>LOG YOSELF IN</h3>
+  <h3>LOG YOSELF IN!</h3>
   `
 })
 export class Login {

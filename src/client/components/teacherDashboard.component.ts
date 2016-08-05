@@ -19,7 +19,7 @@ import { IAppState, rootReducer, enhancers } from '../store/index';
   selector: 'teacher-dashboard',
   providers: [ ],
   template: `
-  <h3>OMG I AM THE TEACHER DASHBOARD</h3>
+  <h3>OMG I AM THE TEACHER DASHBOARD!</h3>
     
   `
 })

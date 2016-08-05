@@ -7,7 +7,7 @@ import { IAppState, rootReducer, enhancers } from '../store/index';
   selector: 'menu-bar',
   providers: [ ],
   template: `
-  <h3>OMG I AM THE MENUBAR</h3>
+  <h3>OMG I AM THE MENUBAR!</h3>
   `
 })
 export class MenuBar {

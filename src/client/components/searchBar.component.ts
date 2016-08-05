@@ -8,7 +8,7 @@ import { IAppState, rootReducer, enhancers } from '../store/index';
   selector: 'search-bar',
   providers: [ ],
   template: `
-  <h3>OMG I AM THE SEARCHBAR</h3>
+  <h3>OMG I AM THE SEARCHBAR!</h3>
     
   `
 })

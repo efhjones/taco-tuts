@@ -8,7 +8,7 @@ import { IAppState, rootReducer, enhancers } from '../store/index';
   selector: 'advanced-search-page',
   providers: [ ],
   template: `
-  <h3>SEARCH ALL DAT SHIT</h3>
+  <h3>SEARCH ALL DAT SHIT!</h3>
   `
 })
 export class AdvancedSearch {

@@ -13,7 +13,7 @@ import { IAppState, rootReducer, enhancers } from '../store/index';
   selector: 'student-dashboard',
   providers: [ ],
   template: `
-  <h3>OMG I AM THE STUDENT DASHBOARD</h3>
+  <h3>OMG I AM THE STUDENT DASHBOARD!</h3>
     
   `
 })
