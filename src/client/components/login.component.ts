@@ -2,22 +2,56 @@
 import { Component } from '@angular/core';
 import { NgRedux, select } from 'ng2-redux';
 import { IAppState, rootReducer, enhancers } from '../store/index';
+import { Auth } from '../services/auth.service';
+import { Router,
+         ROUTER_DIRECTIVES,
+         ActivatedRouteSnapshot,
+         RouterStateSnapshot }    from '@angular/router';
 
 
 @Component({
   selector: 'login',
-  providers: [ ],
+  directives: [ ROUTER_DIRECTIVES ],
+  styles: [`
+    a {
+      color: white;
+    }
+  `],
   template: `
-  <h3>LOG YOSELF IN!</h3>
+    <div>
+        <div class="row">
+          <div class="col-md-6">
+            <form>
+              <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control" #username placeholder="yours@example.com">
+              </div>
+              <div class="form-group">
+                <label for="name">Password</label>
+                <input type="password" class="form-control" #password placeholder="your password">
+              </div>
+              <button type="submit" class="btn btn-default" (click)="auth.login(username.value, password.value)">Login</button>
+               <button type="submit" class="btn btn-default btn-primary" (click)="auth.googleLogin()">Login with google</button>
+              <h4>Don't have an account yet?</h4>
+            </form>
+            <button type="submit" class="btn btn-default btn-primary">
+              <a routerLink="/sign-up" routerLinkActive="active">Sign Up</a>
+            </button>
+          </div>
+        </div>
+      </div>
   `
 })
 export class Login {
-  // Selected observables to test async pipe model.
-  
-  // Members to test subscribe model.
 
   constructor(
+    private auth: Auth,
+    private router: Router,
     private ngRedux: NgRedux<IAppState>
     ) { }
+
+    goToSignup(){
+      this.router.navigate(['/sign-up']);
+    }
 }
 

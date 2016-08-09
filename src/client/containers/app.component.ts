@@ -9,22 +9,25 @@ import { Login } from '../components/login.component';
 import { MenuBarComponent } from '../components/menuBar.component';
 import { IAppState } from '../store/index';
 import { ConfigureStoreService } from '../services/configure-store.service.ts';
+import { Auth } from '../services/auth.service';
 
 @Component({
   selector: 'app',
   directives: [ SearchBar, StudentDashboard, MenuBarComponent, Login, AdvancedSearch, ROUTER_DIRECTIVES ],
   pipes: [ AsyncPipe ],
-  providers: [ DevToolsExtension, ConfigureStoreService ],
+  providers: [ DevToolsExtension, ConfigureStoreService, Auth ],
   template: `
-  <h3>Here is the home page</h3>
-  <h4>Welcome to taco tuts</h4>
-  <menu-bar></menu-bar>
-  <router-outlet></router-outlet>
+  <div class='container-fluid'>
+    <h4>Welcome to taco tuts</h4>
+    <menu-bar></menu-bar>
+    <router-outlet></router-outlet>
+  </div>
   `
 })
 
 export class App {
   constructor(
+    private auth: Auth,
     public router: Router,
     private ngRedux: NgRedux<IAppState>,
     private devTool: DevToolsExtension,
